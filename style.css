@@ -223,6 +223,39 @@ h1, h2, h3, h4 { line-height: 1.3; font-weight: 700; }
 .news-content { color: var(--text); margin-top: 14px; font-size: 15px; line-height: 1.9; }
 .news-single { align-items: start; }
 
+/* ===== 详情页（产品/新闻/案例通用） ===== */
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--navy); font-size: 14px; }
+.back-link:hover { color: var(--red); }
+.detail-head { display: grid; grid-template-columns: 420px 1fr; gap: 36px; align-items: start; margin-bottom: 28px; }
+.detail-img { background: #0b1d3a; border-radius: var(--radius); padding: 20px; display: grid; place-items: center; }
+.detail-img img { max-height: 340px; width: auto; border-radius: 8px; }
+.detail-info h2 { font-size: 26px; color: var(--navy); margin-bottom: 14px; }
+.detail-info .date { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+.detail-info .btn { margin-top: 18px; }
+.detail-content { color: var(--text); font-size: 15.5px; line-height: 1.9; }
+.detail-content h1, .detail-content h2, .detail-content h3 { color: var(--navy); margin: 18px 0 10px; font-size: 19px; }
+.detail-content p { margin-bottom: 12px; }
+.detail-content ul, .detail-content ol { margin: 10px 0 10px 22px; }
+.detail-content li { list-style: disc; margin-bottom: 6px; }
+.detail-content ol li { list-style: decimal; }
+.detail-content strong { color: var(--navy); }
+.detail-content img { max-width: 100%; border-radius: 8px; margin: 10px 0; }
+.g-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+.g-detail figure { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-sm); }
+.g-detail img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ===== 案例卡片 ===== */
+.case-card {
+  display: grid; grid-template-columns: 300px 1fr; gap: 24px; align-items: center;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow-sm); transition: .22s;
+}
+.case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.case-card img { width: 300px; height: 200px; object-fit: cover; }
+.case-card-body { padding: 22px 26px; }
+.case-card-body h3 { font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+.case-card-body p { color: var(--muted); font-size: 14px; }
+
 /* ===== 联系页 ===== */
 .contact-wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 30px; }
 .contact-card {
@@ -280,4 +313,14 @@ h1, h2, h3, h4 { line-height: 1.3; font-weight: 700; }
   .nav.open { display: flex; }
   .nav a.active::after { display: none; }
   .nav-toggle { display: block; }
+}
+
+@media (max-width: 960px) {
+  .detail-head { grid-template-columns: 1fr; }
+  .g-detail { grid-template-columns: repeat(2, 1fr); }
+  .case-card { grid-template-columns: 1fr; }
+  .case-card img { width: 100%; height: auto; }
+}
+@media (max-width: 640px) {
+  .g-detail { grid-template-columns: 1fr; }
 }
