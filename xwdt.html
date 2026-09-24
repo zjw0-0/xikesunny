@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新闻动态 - 西安西科阳光电子有限公司</title>
+<meta name="description" content="西安西科阳光电子有限公司新闻动态。">
+<link rel="icon" type="image/png" href="images/logo1.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="/">
+      <img src="images/logo1.png" alt="西安西科阳光电子有限公司">
+      <span class="brand-text" style="color:#ffffff;">西安西科阳光<small style="color:#9fb0c5;">XiKe SunnyTech Electronic</small></span>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="菜单">☰</button>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/gsjs">公司介绍</a>
+      <a href="/cpzs">产品展示</a>
+      <a href="/syal">使用案例</a>
+      <a href="/xwdt" class="active">新闻动态</a>
+      <a href="/lxwm">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>新闻动态</h1>
+    <p>关注西科阳光最新动态</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div id="news-container"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="f-brand">
+        <h3>西安西科阳光电子有限公司</h3>
+        <p>Xi'an XiKe SunnyTech Electronic Co., Ltd</p>
+        <p>专注于煤矿井下供电安全与矿井智能化、自动化</p>
+      </div>
+      <div class="f-col">
+        <h4>快速导航</h4>
+        <a href="/">首页</a>
+        <a href="/gsjs">公司介绍</a>
+        <a href="/cpzs">产品展示</a>
+        <a href="/syal">使用案例</a>
+        <a href="/xwdt">新闻动态</a>
+        <a href="/lxwm">联系我们</a>
+      </div>
+      <div class="f-col"><h4>产品中心</h4><a href="/cpzs">YHL3.7 检测仪</a><a href="/cpzs">YHL1 检测仪</a></div><div class="f-col"><h4>联系方式</h4>
+        <p>电话：<span data-field="phone"></span></p>
+        <p>手机：<span data-field="mobile"></span></p>
+        <p>地址：<span data-field="address"></span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">版权所有 © 西安西科阳光电子有限公司 · 保留所有权利</div>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
