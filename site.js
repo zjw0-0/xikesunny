@@ -140,10 +140,9 @@ async function main() {
         if (cList) cList.style.display = 'none';
       } else if (cList) {
         cList.innerHTML = data.cases.map(function (c, i) {
-          var brief = stripMd(c.content).slice(0, 60);
           return '<a class="case-card" href="syal.html?id=' + i + '">' +
             '<img src="' + c.image + '" alt="' + c.title + '">' +
-            '<div class="case-card-body"><h3>' + c.title + '</h3><p>' + brief + '</p></div></a>';
+            '<div class="case-card-body"><h3>' + c.title + '</h3></div></a>';
         }).join('');
         if (cDetail) cDetail.style.display = 'none';
       }
