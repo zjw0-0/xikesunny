@@ -49,7 +49,7 @@ collections:
             summary: "{{title}}"
             fields:
               - { label: "标题", name: "title", widget: "string" }
-              - { label: "日期", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
               - { label: "封面图", name: "image", widget: "image", required: false }
               - { label: "正文（富文本，可图文混排）", name: "content", widget: "markdown", required: false }
               - label: "图集（多张图片）"
