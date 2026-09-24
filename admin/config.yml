@@ -2,6 +2,8 @@ backend:
   name: github
   repo: zjw0-0/xikesunny
   branch: main
+  base_url: https://oauth.xikesunny.com
+  auth_endpoint: /auth
 
 media_folder: "images"
 public_folder: "images"
