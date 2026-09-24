@@ -49,12 +49,12 @@
   "cases": [
     {
       "title": "经典案例",
-      "image": "/images/25758881.jpg",
+      "image": "/images/25479840.jpg",
       "content": "产品已在全国多个煤矿企业获得成功应用，有效提升电缆故障排查效率。",
       "gallery": [
-        "/images/25758881.jpg",
+        "/images/41768904.png",
         "/images/25758884.jpg",
-        "/images/25758078.jpg"
+        "/images/41768903.png"
       ]
     },
     {
@@ -64,17 +64,17 @@
       "gallery": [
         "/images/25758529.jpg",
         "/images/25757726.jpg",
-        "/images/25615933.png"
+        "/images/25758078.jpg"
       ]
     },
     {
       "title": "演示培训",
-      "image": "/images/25757721.jpg",
+      "image": "/images/4f6e3e803bb39e19bec9a73d42fb92ed.jpg",
       "content": "为客户提供现场演示与操作培训，确保产品正确高效使用。",
       "gallery": [
-        "/images/25757721.jpg",
-        "/images/25757722.jpg",
-        "/images/25479840.jpg"
+        "/images/4f6e3e803bb39e19bec9a73d42fb92ed.jpg",
+        "/images/501b86c4a85c7adaa47aefdcb40cf2eb.jpg",
+        "/images/5723df2fc8a7532d5d053b06e21b486f.jpg"
       ]
     }
   ]
