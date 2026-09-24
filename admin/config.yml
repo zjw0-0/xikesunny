@@ -33,10 +33,16 @@ collections:
             summary: "{{name}}"
             fields:
               - { label: "产品名称", name: "name", widget: "string" }
-              - { label: "产品图片", name: "image", widget: "image" }
+              - { label: "主图", name: "image", widget: "image" }
               - { label: "角标", name: "tag", widget: "string", required: false }
               - { label: "认证标签", name: "badges", widget: "list", required: false, default: [] }
               - { label: "产品简介", name: "desc", widget: "text" }
+              - { label: "详情内容（富文本，可图文混排）", name: "detail", widget: "markdown", required: false }
+              - label: "详情图集（多张图片）"
+                name: "gallery"
+                widget: "list"
+                required: false
+                field: { label: "图片", name: "image", widget: "image" }
           - label: "新闻动态"
             name: "news"
             widget: "list"
@@ -44,5 +50,23 @@ collections:
             fields:
               - { label: "标题", name: "title", widget: "string" }
               - { label: "日期", name: "date", widget: "date", format: "YYYY-MM-DD" }
-              - { label: "配图", name: "image", widget: "image", required: false }
-              - { label: "内容", name: "content", widget: "text" }
+              - { label: "封面图", name: "image", widget: "image", required: false }
+              - { label: "正文（富文本，可图文混排）", name: "content", widget: "markdown", required: false }
+              - label: "图集（多张图片）"
+                name: "gallery"
+                widget: "list"
+                required: false
+                field: { label: "图片", name: "image", widget: "image" }
+          - label: "使用案例"
+            name: "cases"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "案例标题", name: "title", widget: "string" }
+              - { label: "封面图", name: "image", widget: "image" }
+              - { label: "案例介绍（富文本）", name: "content", widget: "markdown", required: false }
+              - label: "图集（多张图片）"
+                name: "gallery"
+                widget: "list"
+                required: false
+                field: { label: "图片", name: "image", widget: "image" }
