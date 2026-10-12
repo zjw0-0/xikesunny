@@ -57,16 +57,25 @@ collections:
                 widget: "list"
                 required: false
                 field: { label: "图片", name: "image", widget: "image" }
-          - label: "使用案例"
+          - label: "使用案例（二级目录）"
             name: "cases"
             widget: "list"
             summary: "{{title}}"
             fields:
-              - { label: "案例标题", name: "title", widget: "string" }
-              - { label: "封面图", name: "image", widget: "image" }
-              - { label: "案例介绍（富文本）", name: "content", widget: "markdown", required: false }
-              - label: "图集（多张图片）"
-                name: "gallery"
+              - { label: "栏目名称", name: "title", widget: "string" }
+              - { label: "栏目封面图", name: "image", widget: "image", required: false }
+              - { label: "栏目简介", name: "intro", widget: "text", required: false }
+              - label: "案例列表"
+                name: "items"
                 widget: "list"
-                required: false
-                field: { label: "图片", name: "image", widget: "image" }
+                summary: "{{title}}"
+                fields:
+                  - { label: "案例标题", name: "title", widget: "string" }
+                  - { label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false, required: false }
+                  - { label: "封面图", name: "image", widget: "image", required: false }
+                  - { label: "案例介绍（富文本）", name: "content", widget: "markdown", required: false }
+                  - label: "图集（三张图片）"
+                    name: "gallery"
+                    widget: "list"
+                    required: false
+                    field: { label: "图片", name: "image", widget: "image" }

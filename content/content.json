@@ -60,40 +60,62 @@
   "cases": [
     {
       "title": "经典案例",
+      "intro": "产品已在全国多个煤矿企业获得成功应用，有效提升电缆故障排查效率。",
       "image": "/images/25479840.jpg",
-      "content": "产品已在全国多个煤矿企业获得成功应用，有效提升电缆故障排查效率。",
-      "gallery": [
-        "/images/41768904.png",
-        "/images/25758884.jpg",
-        "/images/41768903.png"
+      "items": [
+        {
+          "title": "神木石窑店煤矿电缆故障现场查找",
+          "image": "/images/3b20f96e3e7b6bef87e0f88c2a8d0aa1.jpg",
+          "content": "神木石窑店煤矿电缆故障现场查找，运用矿用动力电缆绝缘故障检测仪对故障电缆进行排查、定位，快速锁定故障点，缩短检修时间，保障矿井供电安全。",
+          "gallery": [
+            "/images/412f13aa9785ab22046207075d328f3f.jpg",
+            "/images/3b20f96e3e7b6bef87e0f88c2a8d0aa1.jpg"
+          ]
+        },
+        {
+          "title": "煤矿电缆故障检测典型应用",
+          "image": "/images/25479840.jpg",
+          "content": "产品已在全国多个煤矿企业获得成功应用，有效提升电缆故障排查效率，可极大减少排查时间，快速恢复正常生产。",
+          "gallery": [
+            "/images/41768904.png",
+            "/images/25758884.jpg",
+            "/images/41768903.png"
+          ]
+        }
       ]
     },
     {
       "title": "合作交流",
+      "intro": "与多家煤矿企业开展深度合作与技术交流，共同推动煤矿供电安全。",
       "image": "/images/25758529.jpg",
-      "content": "与多家煤矿企业开展深度合作与技术交流，共同推动煤矿供电安全。",
-      "gallery": [
-        "/images/25758529.jpg",
-        "/images/25757726.jpg",
-        "/images/25758078.jpg"
+      "items": [
+        {
+          "title": "合作交流",
+          "image": "/images/25758529.jpg",
+          "content": "与多家煤矿企业开展深度合作与技术交流，共同推动煤矿供电安全。",
+          "gallery": [
+            "/images/25758529.jpg",
+            "/images/25757726.jpg",
+            "/images/25758078.jpg"
+          ]
+        }
       ]
     },
     {
       "title": "演示培训",
+      "intro": "为客户提供现场演示与操作培训，确保产品正确高效使用。",
       "image": "/images/4f6e3e803bb39e19bec9a73d42fb92ed.jpg",
-      "content": "为客户提供现场演示与操作培训，确保产品正确高效使用。",
-      "gallery": [
-        "/images/4f6e3e803bb39e19bec9a73d42fb92ed.jpg",
-        "/images/501b86c4a85c7adaa47aefdcb40cf2eb.jpg",
-        "/images/5723df2fc8a7532d5d053b06e21b486f.jpg"
-      ]
-    },
-    {
-      "title": "神木石窑店煤矿电缆故障现场查找",
-      "image": "/images/3b20f96e3e7b6bef87e0f88c2a8d0aa1.jpg",
-      "gallery": [
-        "/images/412f13aa9785ab22046207075d328f3f.jpg",
-        "/images/3b20f96e3e7b6bef87e0f88c2a8d0aa1.jpg"
+      "items": [
+        {
+          "title": "演示培训",
+          "image": "/images/4f6e3e803bb39e19bec9a73d42fb92ed.jpg",
+          "content": "为客户提供现场演示与操作培训，确保产品正确高效使用。",
+          "gallery": [
+            "/images/4f6e3e803bb39e19bec9a73d42fb92ed.jpg",
+            "/images/501b86c4a85c7adaa47aefdcb40cf2eb.jpg",
+            "/images/5723df2fc8a7532d5d053b06e21b486f.jpg"
+          ]
+        }
       ]
     }
   ]

@@ -122,29 +122,69 @@ async function main() {
     }
   } catch (e) { console.error('新闻渲染失败', e); }
 
-  /* 4. 案例 */
+  /* 4. 案例（二级目录：栏目 → 案例列表 → 案例详情） */
   try {
-    var cList = $('cases-list-container');
-    var cDetail = $('cases-detail-container');
+    var catParam = q.get('cat');
+    var cat = catParam === null ? -1 : parseInt(catParam, 10);
+    var cList = $('cases-list-container');        /* 一级：栏目列表 */
+    var cCatList = $('cases-cat-list-container');  /* 二级：栏目内案例列表 */
+    var cDetail = $('cases-detail-container');     /* 三级：案例详情 */
+    function showCaseView(which) {
+      if (cList) cList.style.display = 'none';
+      if (cCatList) cCatList.style.display = 'none';
+      if (cDetail) cDetail.style.display = 'none';
+      if (which === 'list' && cList) cList.style.display = '';        /* 恢复 CSS 栅格 */
+      if (which === 'cat' && cCatList) cCatList.style.display = 'block';
+      if (which === 'detail' && cDetail) cDetail.style.display = 'block';
+    }
     if (data.cases && data.cases.length) {
-      if (cDetail && id >= 0 && data.cases[id]) {
-        var c = data.cases[id];
+      var ccat = (cat >= 0 && cat < data.cases.length) ? data.cases[cat] : null;
+      var citem = (ccat && ccat.items && id >= 0 && id < ccat.items.length) ? ccat.items[id] : null;
+
+      if (cDetail && citem) {
+        /* 三级：案例详情（文字 + 图集） */
+        var meta = ccat ? ccat.title : '';
+        if (citem.date) meta = meta ? (meta + ' · ' + citem.date) : citem.date;
         cDetail.innerHTML =
-          '<a class="back-link" href="syal.html">← 返回案例列表</a>' +
+          '<a class="back-link" href="syal.html?cat=' + cat + '">← 返回案例列表</a>' +
           '<div class="detail-head">' +
-          '<div class="detail-img"><img src="' + c.image + '" alt="' + c.title + '"></div>' +
-          '<div class="detail-info"><h2>' + c.title + '</h2></div></div>' +
-          '<div class="detail-content">' + mdToHtml(c.content) + '</div>' +
-          renderGallery(c.gallery);
-        cDetail.style.display = 'block';
-        if (cList) cList.style.display = 'none';
+          (citem.image ? '<div class="detail-img"><img src="' + citem.image + '" alt="' + citem.title + '"></div>' : '') +
+          '<div class="detail-info"><h2>' + citem.title + '</h2>' +
+          (meta ? '<div class="date">' + meta + '</div>' : '') + '</div></div>' +
+          '<div class="detail-content">' + mdToHtml(citem.content) + '</div>' +
+          renderGallery(citem.gallery);
+        showCaseView('detail');
+      } else if (cCatList && ccat) {
+        /* 二级：栏目内案例列表（类似新闻动态） */
+        var items = ccat.items || [];
+        var listHtml = items.length ? items.map(function (it, i) {
+          var img = it.image ? '<img src="' + it.image + '" alt="' + it.title + '">' : '';
+          var brief = stripMd(it.content).slice(0, 80);
+          return '<a class="news-item news-link" href="syal.html?cat=' + cat + '&id=' + i + '">' + img +
+            '<div><h3>' + it.title + '</h3>' +
+            (it.date ? '<div class="date">' + it.date + '</div>' : '') +
+            (brief ? '<p style="color:var(--muted);margin-top:10px;font-size:14px;">' + brief + (brief.length >= 80 ? '…' : '') + '</p>' : '') +
+            '</div></a>';
+        }).join('') : '<p style="color:var(--muted);">该栏目下暂无案例，可在后台添加。</p>';
+        cCatList.innerHTML =
+          '<a class="back-link" href="syal.html">← 返回案例栏目</a>' +
+          '<div class="case-cat-head">' +
+          (ccat.image ? '<div class="detail-img"><img src="' + ccat.image + '" alt="' + ccat.title + '"></div>' : '') +
+          '<div><h2>' + ccat.title + '</h2>' +
+          (ccat.intro ? '<p>' + ccat.intro + '</p>' : '') + '</div></div>' +
+          '<div class="case-list">' + listHtml + '</div>';
+        showCaseView('cat');
       } else if (cList) {
+        /* 一级：栏目列表 */
         cList.innerHTML = data.cases.map(function (c, i) {
-          return '<a class="case-card" href="syal.html?id=' + i + '">' +
-            '<img src="' + c.image + '" alt="' + c.title + '">' +
-            '<div class="case-card-body"><h3>' + c.title + '</h3></div></a>';
+          var img = c.image || (c.items && c.items[0] ? c.items[0].image : '');
+          return '<a class="case-card" href="syal.html?cat=' + i + '">' +
+            '<img src="' + img + '" alt="' + c.title + '">' +
+            '<div class="case-card-body"><h3>' + c.title + '</h3>' +
+            (c.items ? '<p class="count">' + c.items.length + ' 篇案例</p>' : '') +
+            '</div></a>';
         }).join('');
-        if (cDetail) cDetail.style.display = 'none';
+        showCaseView('list');
       }
     }
   } catch (e) { console.error('案例渲染失败', e); }

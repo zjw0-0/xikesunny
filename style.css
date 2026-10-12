@@ -254,6 +254,14 @@ h1, h2, h3, h4 { line-height: 1.3; font-weight: 700; }
 .case-card img { width: 100%; height: 220px; object-fit: cover; }
 .case-card-body { padding: 16px 20px; }
 .case-card-body h3 { font-size: 18px; color: var(--navy); }
+.case-card-body .count { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+/* ===== 案例二级目录（栏目内案例列表） ===== */
+.case-cat-head { display: grid; grid-template-columns: 420px 1fr; gap: 36px; align-items: center; margin-bottom: 28px; }
+.case-cat-head .detail-img { margin: 0; }
+.case-cat-head h2 { font-size: 26px; color: var(--navy); margin-bottom: 12px; }
+.case-cat-head p { color: var(--muted); }
+.case-list { display: flex; flex-direction: column; gap: 18px; }
 
 /* ===== 联系页 ===== */
 .contact-wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 30px; }
@@ -316,6 +324,7 @@ h1, h2, h3, h4 { line-height: 1.3; font-weight: 700; }
 
 @media (max-width: 960px) {
   .detail-head { grid-template-columns: 1fr; }
+  .case-cat-head { grid-template-columns: 1fr; }
   .g-detail { grid-template-columns: repeat(2, 1fr); }
   #cases-list-container { grid-template-columns: repeat(2, 1fr); }
 }
